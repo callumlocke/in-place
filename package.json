@@ -1,0 +1,32 @@
+{
+  "name": "light-array",
+  "version": "0.0.0",
+  "main": "lib/light-array.js",
+  "description": "Fast, low-garbage functions for operating on arrays.",
+  "homepage": "https://github.com/callumlocke/light-array",
+  "bugs": "https://github.com/callumlocke/light-array/issues",
+  "author": {
+    "name": "Callum Locke"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/callumlocke/light-array"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "light-array",
+    "array",
+    "performance",
+    "garbage"
+  ],
+  "devDependencies": {
+    "mocha": "~2.0.1",
+    "chai": "~1.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
