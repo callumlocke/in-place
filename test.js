@@ -31,14 +31,14 @@ describe('light-array', function() {
     });
   });
 
-  describe('deleteItemAtIndex', function () {
+  describe('removeItemByIndex', function () {
     it('works', function () {
       var animals = [
         'dog', 'cat', 'banana', 'salamander',
         'elephant', 'mouse', 'giraffe', 'orange'
       ];
 
-      lightArray.deleteItemAtIndex(animals, 2);
+      lightArray.removeItemByIndex(animals, 2);
 
       expect(animals.sort(sortAlpha)).to.deep.equal([
         'dog', 'cat', 'salamander', 'elephant',

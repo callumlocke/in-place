@@ -26,7 +26,7 @@ module.exports = {
   },
 
 
-  deleteItemAtIndex: function (array, i) {
+  removeItemByIndex: function (array, i) {
     // copy the last item and use it to replace the target index
     var lastIndex = array.length - 1;
     array[i] = array[lastIndex];
