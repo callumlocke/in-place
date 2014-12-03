@@ -1,6 +1,6 @@
 {
   "name": "light-array",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/light-array.js",
   "description": "Fast, low-garbage functions for operating on arrays.",
   "homepage": "https://github.com/callumlocke/light-array",
