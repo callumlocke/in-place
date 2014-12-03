@@ -13,9 +13,6 @@
     "url": "https://github.com/callumlocke/light-array"
   },
   "license": "MIT",
-  "files": [
-    "lib"
-  ],
   "keywords": [
     "light-array",
     "array",
