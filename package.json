@@ -1,27 +1,26 @@
 {
-  "name": "light-array",
+  "name": "in-place",
+  "description": "Fast, low-garbage functions for modifying arrays.",
   "version": "0.0.2",
-  "main": "lib/light-array.js",
-  "description": "Fast, low-garbage functions for operating on arrays.",
-  "homepage": "https://github.com/callumlocke/light-array",
-  "bugs": "https://github.com/callumlocke/light-array/issues",
   "author": {
     "name": "Callum Locke"
   },
+  "bugs": "https://github.com/callumlocke/in-place/issues",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4"
+  },
+  "homepage": "https://github.com/callumlocke/in-place",
+  "keywords": [
+    "array",
+    "garbage",
+    "performance"
+  ],
+  "license": "MIT",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/callumlocke/light-array"
-  },
-  "license": "MIT",
-  "keywords": [
-    "light-array",
-    "array",
-    "performance",
-    "garbage"
-  ],
-  "devDependencies": {
-    "mocha": "~2.0.1",
-    "chai": "~1.10.0"
+    "url": "https://github.com/callumlocke/in-place"
   },
   "scripts": {
     "test": "mocha"

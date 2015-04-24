@@ -1,6 +1,6 @@
-/*
- * light-array
- * https://github.com/callumlocke/light-array
+/**
+ * in-place
+ * https://github.com/callumlocke/in-place
  *
  * Copyright (c) 2014 Callum Locke
  * Licensed under the MIT license.
@@ -10,31 +10,44 @@
 
 module.exports = {
 
+  map: function (array, callback, thisArg) {
+    if (thisArg) callback = callback.bind(thisArg);
 
-  filterInPlace: function(array, check) {
+    for (var i = 0, length = array.length; i < length; i++) {
+      array[i] = callback(array[i], i);
+    }
+
+    return array;
+  },
+
+  filter: function (array, callback, thisArg) {
     var length = array.length, i, k, item;
 
-    // iterate through, moving check-passing items to the front
+    if (thisArg) callback = callback.bind(thisArg);
+
+    // iterate through, moving callback-passing items to the front
     for (i = 0, k = 0; i < length; i++) {
       item = array[k] = array[i];
 
-      if (check(item, i)) k += 1; // this one can stay
+      if (callback(item, i, array)) k += 1; // this one can stay
     }
 
     // truncate the array after the last item that passes the check
     array.length = k;
+
+    return array;
   },
 
-
-  removeItemByIndex: function (array, i) {
+  deleteIndex: function (array, i) {
     // copy the last item and use it to replace the target index
     var lastIndex = array.length - 1;
     array[i] = array[lastIndex];
 
     // remove the last item
     array.length = lastIndex;
-  },
 
+    return array;
+  },
 
   dedupe: function (array) {
     var length = array.length,
@@ -56,8 +69,9 @@ module.exports = {
     }
 
     array.length = k;
-  },
 
+    return array;
+  },
 
   dedupeSorted: function (array) {
     var length = array.length,
@@ -70,7 +84,8 @@ module.exports = {
     }
 
     array.length = k;
-  }
 
+    return array;
+  }
 
 };

@@ -1,83 +1,67 @@
 /*global describe, it*/
 
-var lightArray = require('./index');
+var inPlace = require('./index');
 var expect = require('chai').expect;
 
-var sortAlpha = function (a, b) {
-  if (a > b) return 1;
-  if (b > a) return -1;
-  return 0;
-};
+describe('in-place', function() {
 
-describe('light-array', function() {
-
-  describe('filterInPlace', function() {
+  describe('map', function() {
     it('works', function () {
-      var animals = [
-        'dog', 'cat', 'banana', 'salamander',
-        'elephant', 'mouse', 'giraffe', 'orange'
-      ];
+      var arr = [1, 2, 3, 4, 5];
 
       var counter = 0;
-      lightArray.filterInPlace(animals, function (item, i) {
-        expect(counter++).to.equal(i); // index increments normally
+      inPlace.map(arr, function (item, i) {
+        expect(counter++).to.equal(i);
 
-        return item !== 'banana' && item !== 'orange';
+        return item * 2;
       });
 
-      expect(animals).to.deep.equal([
-        'dog', 'cat', 'salamander', 'elephant', 'mouse', 'giraffe'
-      ]);
+      expect(arr).to.deep.equal([2, 4, 6, 8, 10]);
     });
   });
 
-  describe('removeItemByIndex', function () {
+  describe('filter', function() {
     it('works', function () {
-      var animals = [
-        'dog', 'cat', 'banana', 'salamander',
-        'elephant', 'mouse', 'giraffe', 'orange'
-      ];
+      var arr = [1, 12.1, 5.2, 22, 6];
 
-      lightArray.removeItemByIndex(animals, 2);
+      var counter = 0;
+      inPlace.filter(arr, function (item, i) {
+        expect(counter++).to.equal(i);
 
-      expect(animals.sort(sortAlpha)).to.deep.equal([
-        'dog', 'cat', 'salamander', 'elephant',
-        'mouse', 'giraffe', 'orange'
-      ].sort(sortAlpha));
+        return item < 10;
+      });
+
+      expect(arr).to.deep.equal([1, 5.2, 6]);
+    });
+  });
+
+  describe('deleteIndex', function () {
+    it('works', function () {
+      var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+
+      inPlace.deleteIndex(arr, 2);
+
+      expect(arr).to.deep.equal(['a', 'b', 'g', 'd', 'e', 'f']);
     });
   });
 
   describe('dedupe', function () {
     it('works', function () {
-      var animals = [
-        'dog', 'cat', 'banana', 'salamander',
-        'elephant', 'mouse', 'dog', 'orange',
-        'dog', 'dog', 'hamster', 'dog'
-      ];
+      var arr = [1, 2, 2, 5, 1, 6, 2];
 
-      lightArray.dedupe(animals);
+      inPlace.dedupe(arr);
 
-      expect(animals).to.deep.equal([
-        'cat', 'banana', 'salamander', 'elephant',
-        'mouse', 'orange', 'hamster', 'dog'
-      ]);
+      expect(arr).to.deep.equal([5, 1, 6, 2]);
     });
   });
 
   describe('dedupeSorted', function () {
     it('works', function () {
-      var animals = [
-        'cat', 'banana', 'salamander',
-        'elephant', 'mouse', 'dog', 'orange',
-        'dog', 'dog', 'hamster', 'dog'
-      ];
+      var arr = [1, 2, 2, 3, 5, 6, 6, 6];
 
-      lightArray.dedupeSorted(animals.sort(sortAlpha));
+      inPlace.dedupe(arr);
 
-      expect(animals).to.deep.equal([
-        'cat', 'banana', 'salamander', 'elephant',
-        'mouse', 'orange', 'hamster', 'dog'
-      ].sort(sortAlpha));
+      expect(arr).to.deep.equal([ 1, 2, 3, 5, 6 ]);
     });
   });
 
