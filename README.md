@@ -34,7 +34,7 @@ Alternative to [`Array.prototype.filter()`](https://developer.mozilla.org/en/doc
 ```js
 var array = [1, 12.1, 5.2, 22, 6];
 
-inPlace.filter(array, function (item) { return item < 10; });
+inPlace.filter(array, function (item) { return item < 10 });
 
 console.log(array); // [1, 5.2, 6]
 ```
@@ -43,7 +43,7 @@ console.log(array); // [1, 5.2, 6]
 
 - Very fast method to delete a single item by index.
 - Does **not** preserve the original order.
-- If you care about keeping the array in order, use [`Array.prototype.splice(index, 1)`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map), but it's slower.
+- If you care about keeping the array in order, use [`Array.prototype.splice(index, 1)`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
 
 ```js
 var foo = [1, 2, 3, 4, 5, 6, 7];
