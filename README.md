@@ -2,7 +2,7 @@
 
 Fast, low-garbage functions for modifying arrays.
 
-```sh
+```
 $ npm install in-place
 ```
 
