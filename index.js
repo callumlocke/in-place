@@ -8,6 +8,8 @@
 
 'use strict';
 
+var slice = Array.prototype.slice;
+
 module.exports = {
 
   map: function (array, callback, thisArg) {
@@ -34,6 +36,29 @@ module.exports = {
 
     // truncate the array after the last item that passes the check
     array.length = k;
+
+    return array;
+  },
+
+  concat: function (array) {
+    var values = slice.call(arguments, 1),
+        nextIndex = array.length,
+        value, i, l, i2, l2;
+
+    for (i = 0, l = values.length; i < l; i++) {
+      value = values[i];
+
+      if (Array.isArray(value)) {
+        for (i2 = 0, l2 = value.length; i2 < l2; i2++) {
+          array[nextIndex] = value[i2];
+          nextIndex++;
+        }
+      }
+      else {
+        array[nextIndex] = value;
+        nextIndex++;
+      }
+    }
 
     return array;
   },

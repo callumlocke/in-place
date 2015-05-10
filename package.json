@@ -1,6 +1,6 @@
 {
   "name": "in-place",
-  "description": "Fast, low-garbage functions for modifying arrays.",
+  "description": "Fast, low-garbage functions for manipulating arrays.",
   "version": "1.0.0",
   "author": {
     "name": "Callum Locke"

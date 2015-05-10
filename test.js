@@ -1,11 +1,13 @@
 /*global describe, it*/
 
+'use strict';
+
 var inPlace = require('./index');
 var expect = require('chai').expect;
 
-describe('in-place', function() {
+describe('in-place', function () {
 
-  describe('map', function() {
+  describe('map', function () {
     it('works', function () {
       var arr = [1, 2, 3, 4, 5];
 
@@ -20,7 +22,7 @@ describe('in-place', function() {
     });
   });
 
-  describe('filter', function() {
+  describe('filter', function () {
     it('works', function () {
       var arr = [1, 12.1, 5.2, 22, 6];
 
@@ -32,6 +34,16 @@ describe('in-place', function() {
       });
 
       expect(arr).to.deep.equal([1, 5.2, 6]);
+    });
+  });
+
+  describe('concat', function () {
+    it('works', function () {
+      var arr = [1, 2];
+
+      inPlace.concat(arr, [3, 4], 5, 6, [7, 8, 9]);
+
+      expect(arr).to.deep.equal([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     });
   });
 

@@ -1,6 +1,6 @@
 # in-place [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
-Fast, low-garbage functions for modifying arrays.
+Fast, low-garbage functions for manipulating arrays in-place.
 
 ```
 $ npm install in-place
@@ -77,6 +77,20 @@ inPlace.dedupe(array);
 
 console.log(array); // [1, 2, 3, 5, 6]
 ```
+
+
+### `concat(array, anotherArray)`
+
+Alternative to [`Array.prototype.concat()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/concat).
+
+```js
+var array = [1, 2];
+
+inPlace.concat(array, [3, 4], 5, 6, [7, 8]);
+
+console.log(array); // [1, 2, 3, 5, 6, 7, 8]
+```
+
 
 
 [npm-url]: https://npmjs.org/package/in-place
