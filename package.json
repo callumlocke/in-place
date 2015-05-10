@@ -8,6 +8,7 @@
   "bugs": "https://github.com/callumlocke/in-place/issues",
   "devDependencies": {
     "chai": "^2.2.0",
+    "eslint": "^0.21.0",
     "mocha": "^2.2.4"
   },
   "homepage": "https://github.com/callumlocke/in-place",
@@ -23,6 +24,7 @@
     "url": "https://github.com/callumlocke/in-place"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "eslint . && mocha",
+    "watch": "mocha --watch"
   }
 }
