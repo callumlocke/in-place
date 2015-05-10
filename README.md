@@ -17,7 +17,7 @@ All these methods directly modify the array you pass in. They never allocate new
 
 ### `map(array, callback[, thisArg])`
 
-Alternative to [`Array.prototype.map()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
+Alternative to [`array.map(callback[, thisArg])`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
 
 ```js
 var array = [1, 2, 3, 4, 5];
@@ -29,7 +29,7 @@ console.log(array); // [2, 4, 6, 8, 10]
 
 ### `filter(array, callback[, thisArg])`
 
-Alternative to [`Array.prototype.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
+Alternative to [`array.filter(callback[, thisArg])`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
 
 ```js
 var array = [1, 12.1, 5.2, 22, 6];
@@ -43,7 +43,7 @@ console.log(array); // [1, 5.2, 6]
 
 - Very fast method to delete a single item by index.
 - Does **not** preserve the original order.
-- If you care about keeping the array in order, use [`Array.prototype.splice(index, 1)`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
+- If you care about keeping the array in order, use [`array.splice(index, 1)`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
 
 ```js
 var foo = [1, 2, 3, 4, 5, 6, 7];
@@ -68,7 +68,7 @@ console.log(array); // [5, 1, 6, 2];
 
 ### `dedupeSorted(array)`
 
-- Faster alternative to `inPlace.dedupe()` for use when you know the array is **already** sorted (i.e. `array[n] <= array[n + 1]`).
+- Like `inPlace.dedupe(array)` but faster – for use when you know the array is **already** sorted (i.e. `array[n] <= array[n + 1]`).
 
 ```js
 var array = [1, 2, 2, 3, 5, 6, 6, 6];
@@ -79,16 +79,16 @@ console.log(array); // [1, 2, 3, 5, 6]
 ```
 
 
-### `concat(array, anotherArray)`
+### `concat(array, ...values)`
 
-Alternative to [`Array.prototype.concat()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/concat).
+Alternative to [`array.concat(...values)`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/concat).
 
 ```js
 var array = [1, 2];
 
 inPlace.concat(array, [3, 4], 5, 6, [7, 8]);
 
-console.log(array); // [1, 2, 3, 5, 6, 7, 8]
+console.log(array); // [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
 
