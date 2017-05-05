@@ -1,19 +1,13 @@
 declare module "in-place" {
-    let inPlace: InPlace;
+    export function map(array: Array<any>, callback: (item: any, index: number) => void, thisArg?: any): Array<any>;
 
-    class InPlace {
-        public map(array: Array<any>, callback: (item: any, index: number) => void, thisArg?: any): Array<any>;
+    export function filter(array: Array<any>, callback: (item: any, index: number) => boolean, thisArg?: any): Array<any>;
 
-        public filter(array: Array<any>, callback: (item: any, index: number) => boolean, thisArg?: any): Array<any>;
+    export function concat(array: Array<any>): Array<any>;
 
-        public concat(array: Array<any>): Array<any>;
+    export function deleteIndex(array: Array<any>, index: number): Array<any>;
 
-        public deleteIndex(array: Array<any>, index: number): Array<any>;
+    export function dedupe(array: Array<any>): Array<any>;
 
-        public dedupe(array: Array<any>): Array<any>;
-
-        public dedupeSorted(array: Array<any>): Array<any>;
-    }
-
-    export default inPlace;
+    export function dedupeSorted(array: Array<any>): Array<any>;
 }
