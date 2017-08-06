@@ -43,7 +43,7 @@ console.log(array); // [1, 5.2, 6]
 
 - Very fast method to delete a single item by index.
 - Does **not** preserve the original order.
-- If you care about keeping the array in order, use [`array.splice(index, 1)`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
+- If you care about keeping the array in order, use [`array.splice(index, 1)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice).
 
 ```js
 var foo = [1, 2, 3, 4, 5, 6, 7];
