@@ -6,10 +6,15 @@ Fast, low-garbage functions for manipulating arrays in-place.
 $ npm install in-place
 ```
 
+### Javascript
 ```js
 var inPlace = require('in-place');
 ```
 
+### Typescript
+```js
+import * as inPlace from 'in-place';
+```
 
 ## Methods
 
